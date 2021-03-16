@@ -5,7 +5,7 @@
   }
 
 body{
-    background-color: rgb(223, 217, 217);
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 }
 
 .root{
@@ -55,7 +55,7 @@ body{
     height: 40px;
     cursor: pointer;
     margin: 20px 0 0 20px;
-    color: #a675b3;
+    color: #f69d3c;
     background-color: #3b2751;
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px #3b2751;
@@ -77,7 +77,7 @@ body{
     min-width: 150px;
     height: 40px;
     cursor: pointer;
-    color: #a675b3;
+    color: #f69d3c;
     background-color: #3b2751;
     margin: 20px 0 0 20px;
     border-radius: 5px;
@@ -125,10 +125,12 @@ body{
 
 .status{
     display: flex;
+    justify-content: space-between;
 }
 
 .status__text{
     color: rgb(209, 19, 19);
+    cursor: pointer;
 }
 .status__text-active{
     color: rgb(24, 185, 24);
@@ -141,12 +143,12 @@ body{
 
 .block-message{
     position: fixed;
-    margin: 500px 0 0 30px;
+    margin: 25% 0 0 2%;
     cursor: pointer;
 }
 
 .message{
-    background-image: url("https://i.ibb.co/DYd1rQM/message.png");
+    background-image: url("https://i.ibb.co/M7Fdwqr/letter.png");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,7 +158,8 @@ body{
 }
 
 .messageCount{
-    margin-right: 25px;
+    margin: 0 0 25% 0;
+    color: rgb(153, 30, 8);
 }
 
 /*  */
