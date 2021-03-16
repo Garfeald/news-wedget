@@ -22,7 +22,7 @@ const showMessage = (id) => {
 const readMessage = (id) => {
     const statusText = document.getElementById(id)
     statusText.classList.add('status__text-active');
-    document.getElementById(id).innerHTML = 'прочитано'
+    document.getElementById(id).innerHTML = 'Readed'
     const messageCount = document.getElementById('messageCount').innerHTML
     document.getElementById('messageCount').innerHTML = messageCount - 1
     statusText.removeAttribute('onclick')
@@ -59,7 +59,7 @@ const renderContext = (response) => {
             <p><b>Date:</b> ${fixedDate}</p>
             <div class="status">
               <b>Status:</b>
-              <p id="${index}" class="status__text" onclick="readMessage('${index}')">не прочитано</p>
+              <p id="${index}" class="status__text" onclick="readMessage('${index}')">Not Readed!</p>
             </div>
           </div>
         </div>
