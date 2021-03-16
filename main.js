@@ -1,15 +1,23 @@
 
 // const apiKey = '4dbc17e007ab436fb66416009dfb59a8';
 // const apiKey = '7878eaa2b917400fbc0b81e516b55e6b';
-const apiKey = '295c6b46f60d41d18d38545d6281f15f';
+// const apiKey = '295c6b46f60d41d18d38545d6281f15f';
+const apiKey = '279ea6339b4c42cb99b8d3f02219d9d7';
 
 const conteiner = document.getElementById('conteiner');
 
 const buttonHideNews = document.getElementById('button-hide');
 
+const messageCount= document.getElementsByClassName('messageCount')
+
 const data = new Date();
 
 const fixedDate = `${data.getDate()}.${data.getMonth() + 1}.${data.getFullYear()}`;
+
+const showMessage = (id) => {
+  const notReadedMessage = document.getElementById(id).innerHTML
+  console.log(notReadedMessage)
+}
 
 const readMessage = (id) => {
     const statusText = document.getElementById(id)
@@ -17,6 +25,10 @@ const readMessage = (id) => {
     document.getElementById(id).innerHTML = 'прочитано'
     const messageCount = document.getElementById('messageCount').innerHTML
     document.getElementById('messageCount').innerHTML = messageCount - 1
+    statusText.removeAttribute('onclick')
+    if(messageCount - 1 === 0){
+      document.getElementById('block-message').innerHTML = ''
+    }
 } 
 
 function showNews() {
@@ -41,7 +53,7 @@ const renderContext = (response) => {
             <img src="${dataFields.urlToImage}" class="img" />
           </div>
           <div class="text-block">
-            <p><b>Title:</b> ${dataFields.title}</p>
+            <p><b id="">Title:</b> ${dataFields.title}</p>
             <p><b>Author:</b> ${dataFields.author}</p>
             <div><b>Details: </b><a href="${dataFields.url}">ShowDetails</a></div>
             <p><b>Date:</b> ${fixedDate}</p>
@@ -55,7 +67,7 @@ const renderContext = (response) => {
       `;
       messageContent =
       `
-        <div class="message"><b class="messageCount" id="messageCount" >${articles.length}</b></div>
+        <div class="message"><b class="messageCount" id="messageCount" onclick="showMessage()">${articles.length}</b></div>
 
       `
       document.getElementById('block-message').innerHTML = messageContent;
