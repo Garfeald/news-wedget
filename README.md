@@ -1,1 +1,1 @@
-# news-wedget
+# news-widget
