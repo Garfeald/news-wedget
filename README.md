@@ -1,1 +1,1 @@
-# news-widget
+# news-widget-with-buttons
